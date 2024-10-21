@@ -27,8 +27,8 @@
       banners using a gsap timeline. You can compose your banner by choosing
       certain types of frames using the input field below and define basic
       configurations for it by modifying values in the "basic configuration"
-      form. Removing a frame can be done by clicking on it. The website serves as
-      a helper for junior web designers to learn javascript animation without
+      form. Removing a frame can be done by clicking on it. The website serves
+      as a helper for junior web designers to learn javascript animation without
       the need to use proprietary software. Sketch roughly what you need for
       your banner, download it, then modify what's necessary.
     </p>
@@ -61,8 +61,12 @@
       This website is developed using svelte (without sveltekit) and generates a
       bundle of static assets, allowing it to be hosted on any server. The tool
       is obviously free; you can play around with it, modify it, us it in your
-      projects and so on. Sources are available on github. It is offered as-is
-      and may contain bugs.
+      projects and so on. Sources are available on <a
+        href="https://github.com/ambientmoxie/banner-maker"
+        target="_blank"
+      >
+        github</a
+      >. It is offered as-is and may contain bugs.
     </p>
   </section>
 

@@ -58,7 +58,7 @@
 
 <div id="frame-selector">
   <input list="frame-suggestion" bind:value={input} />
-  <button on:click={updateTimeline} class="submit-button">submit</button>
+  <button on:click={updateTimeline} class="submit-button">add</button>
 </div>
 <datalist id="frame-suggestion">
   {#each defaultFrames as df}

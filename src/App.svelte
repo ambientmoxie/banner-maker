@@ -27,15 +27,15 @@
       banners using a gsap timeline. You can compose your banner by choosing
       certain types of frames using the input field below and define basic
       configurations for it by modifying values in the "basic configuration"
-      paragraph. The website serves as a helper for junior web designers to
-      learn javascript animation without the need to use proprietary software.
-      Sketch roughly what you need for your banner, download it, then modify
-      what's necessary.
+      form. Removing a frame can be done by clicking on it. The website serves as
+      a helper for junior web designers to learn javascript animation without
+      the need to use proprietary software. Sketch roughly what you need for
+      your banner, download it, then modify what's necessary.
     </p>
   </section>
 
   <section id="timeline">
-    <h2>Current state of your post</h2>
+    <h2>Timeline's current state</h2>
     <Timeline />
   </section>
 

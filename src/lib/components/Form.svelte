@@ -102,7 +102,7 @@
 <div id="form">
   <div id="form-left">
     <div class="input-container">
-      <label for=""> Redirection URL</label>
+      <label for=""> Redirection URL:</label>
       <input
         bind:value={$bannerConfig.misc.urlRedirect}
         placeholder="ex: https://www.google.com"
@@ -110,12 +110,12 @@
     </div>
 
     <div class="input-container">
-      <label for="">Delay between frames (s)</label>
+      <label for="">Delay between frames (s):</label>
       <input bind:value={$bannerConfig.gsap.delay} placeholder="ex: 2" />
     </div>
 
     <div class="input-container">
-      <label for="">Company name</label>
+      <label for="">Company name:</label>
       <input
         bind:value={$bannerConfig.misc.companyName}
         placeholder="ex: Brightpath.io"
@@ -141,7 +141,7 @@
     </div>
 
     <div class="input-container">
-      <label for="Logo">Logo (*.svg only)</label>
+      <label for="Logo">Logo (*.svg only):</label>
       <Dropzone
         class="custom-dropzone"
         accept="image/svg+xml"

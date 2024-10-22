@@ -24,10 +24,10 @@
   function setUpdate() {
     const current = {
       month: getFullMonth(buildDate.getMonth()),
-      day: buildDate.getDate(),
+      day: (buildDate.getDate() < 10 ? "0" : "") + buildDate.getDate(),
       year: buildDate.getFullYear(),
-      hour: buildDate.getHours(),
-      minute: buildDate.getMinutes(),
+      hour: (buildDate.getHours() < 10 ? "0" : "") + buildDate.getHours(),
+      minute: (buildDate.getMinutes() < 10 ? "0" : "") + buildDate.getMinutes(),
     };
 
     const outputDate =

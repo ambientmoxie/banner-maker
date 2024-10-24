@@ -27,21 +27,31 @@
     // Ensure that the svg element is successfully retrieved.
     if (!svgElement) return null;
 
-    // To create a functional "svg symbol" for our upcoming banner template,
-    // we are extracting attributes to build the most valid version possible.
-    // First, we are getting the commonly used "viewBox" attribute to extract width and height values.
-    const viewBox = svgElement.getAttribute("viewBox") || "0 0 100 100";
-    const [vbWidth, vbHeight] = viewBox.split(" ").slice(2).map(Number);
+    // Checking for the presence of certain attributes
+    const viewBox = svgElement.getAttribute("viewBox");
+    const width = svgElement.getAttribute("width");
+    const height = svgElement.getAttribute("height");
 
-    // Next, we are trying to fetch the "width" and "height" attributes.
-    // If our SVG doesn't have these attributes, we replace them with the previously extracted viewBox dimensions.
-    const svgWidth = svgElement.getAttribute("width") || vbWidth;
-    const svgHeight = svgElement.getAttribute("height") || vbHeight;
+    // Default value assignment
+    let svgViewBox = "0 0 100 100";
+    let svgWidth = 100;
+    let svgHeight = 100;
+
+    // Conditionally setting attribute values
+    if (viewBox) {
+      const [vbWidth, vbHeight] = viewBox.split(" ").slice(2).map(Number);
+      svgViewBox = viewBox;
+      svgWidth = vbWidth;
+      svgHeight = vbHeight;
+    } else if (width && height) {
+      svgWidth = Number(width);
+      svgHeight = Number(height);
+      svgViewBox = `0 0 ${svgWidth} ${svgHeight}`;
+    }
 
     // If the "fill" attribute if empty or not present, we are setting an empty value.
     const svgFill = svgElement.getAttribute("fill") || "";
-    const xmlns =
-      svgElement.getAttribute("xmlns") || "http://www.w3.org/2000/svg";
+    const xmlns = svgElement.getAttribute("xmlns") || "http://www.w3.org/2000/svg";
 
     // Check if our logo is vertical or not. This will be used for css fine-tuning.
     const isVertical = Number(svgWidth) / Number(svgHeight) < 1;
@@ -50,7 +60,7 @@
     const innerContent = svgElement.innerHTML;
     const transformedSVG = `
       <svg>
-        <symbol id="my-logo" viewBox="${viewBox}" xmlns="${xmlns}" fill="${svgFill}">
+        <symbol id="my-logo" viewBox="${svgViewBox}" xmlns="${xmlns}" fill="${svgFill}">
           ${innerContent}
         </symbol>
       </svg>
